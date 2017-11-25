@@ -1,0 +1,228 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>main</title><meta name="generator" content="MATLAB 9.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-11-22"><meta name="DC.source" content="main.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:5%; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#000; line-height:140%; background:#ADEBFF none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:16px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+
+</style></head><body>
+<div class="content"><h2>Contents</h2><div><ul><li><a href="#1">&#21021;&#22987;&#21270;</a></li><li><a href="#2">&#22788;&#29702;&#26041;&#24335;&#19968;</a></li><li><a href="#3">&#22788;&#29702;&#26041;&#24335;&#20108;</a></li></ul></div><h2>&#21021;&#22987;&#21270;<a name="1"></a></h2><pre class="codeinput">clear
+clc
+<span class="comment">% &#35835;&#21462;&#21407;&#22270;</span>
+X_src=imread(<span class="string">'LBimage2.bmp'</span>);
+</pre><h2>&#22788;&#29702;&#26041;&#24335;&#19968;<a name="2"></a></h2><pre class="codeinput"><span class="comment">%@@ &#38750;&#32447;&#24615;&#24179;&#28369;&#28388;&#27874;&#22120;</span>
+<span class="comment">%@ &#24207;&#32479;&#35745;&#28388;&#27874;&#22120;</span>
+<span class="comment">% 1&#12289;&#26368;&#23567;&#20540;&#28388;&#27874;1&#65306;&#26816;&#27979;&#22270;&#20687;&#26368;&#26263;&#28857;</span>
+X_min1=MinFilter(double(X_src),3);
+<span class="comment">% 2&#12289;&#26368;&#23567;&#20540;&#28388;&#27874;1&#65306;&#26816;&#27979;&#22270;&#20687;&#26368;&#26263;&#28857;</span>
+X_min2=MinFilter(X_min1,7);
+<span class="comment">% 3&#12289;&#20013;&#20540;&#28388;&#27874;&#65306;&#28040;&#38500;&#23396;&#31435;&#22122;&#22768;&#33021;&#21147;&#24378;&#65292;&#19988;&#27169;&#31946;&#23567;</span>
+X_med=MedFilter(X_min2,3);
+
+<span class="comment">%@@ &#38750;&#32447;&#24615;&#38160;&#21270;&#28388;&#27874;&#22120;</span>
+<span class="comment">% 4&#12289;Prewitt&#31639;&#23376;&#65306;&#25233;&#21046;&#22122;&#22768;</span>
+X_prewitt=Prewitt(double(X_med));
+
+<span class="comment">% 5&#12289;&#36793;&#30028;&#22788;&#29702;&#65306;&#23558;&#36793;&#30028;&#22788;&#30340;&#20687;&#32032;&#35774;&#32622;&#20026;0</span>
+X_edge = zeros(size(X_prewitt));                                <span class="comment">% &#21019;&#24314;&#21516;&#31561;&#22823;&#23567;&#30340;&#38646;&#30697;&#38453;</span>
+[height,width]=size(X_prewitt);                                 <span class="comment">% &#26816;&#32034;&#22270;&#20687;&#22823;&#23567;</span>
+X_edge(7:height-6,7:width-6) = X_prewitt(7:height-6,7:width-6); <span class="comment">% &#23558;&#20013;&#38388;&#37096;&#20998;&#25918;&#20837;&#38646;&#30697;&#38453;</span>
+
+<span class="comment">% 6&#12289;&#20108;&#20540;&#21270;&#65306;&#38408;&#20540;&#20026;0.4</span>
+X_bw=img2bw(X_edge,0.4);
+
+<span class="comment">% &#26174;&#31034;&#32467;&#26524;</span>
+h1 = figure(<span class="string">'name'</span>,<span class="string">'&#28388;&#27874;&#26041;&#24335;1'</span>,<span class="string">'NumberTitle'</span>,<span class="string">'off'</span>);
+set(h1,<span class="string">'units'</span>,<span class="string">'normalized'</span>,<span class="string">'position'</span>,[0.1 0.1 0.7 0.7]);
+subplot(2,4,1); imshow(uint8(X_src));     title(<span class="string">'\fontsize{11}\color{blue}&#21407;&#22270;'</span>);
+subplot(2,4,2); imshow(uint8(X_min1));    title(<span class="string">'\fontsize{11}\color{blue}1&#12289;&#26368;&#23567;&#20540;&#28388;&#27874;1[3]'</span>);
+subplot(2,4,3); imshow(uint8(X_min2));    title(<span class="string">'\fontsize{11}\color{blue}2&#12289;&#26368;&#23567;&#20540;&#28388;&#27874;2[7]'</span>);
+subplot(2,4,4); imshow(uint8(X_med));     title(<span class="string">'\fontsize{11}\color{blue}3&#12289;&#20013;&#20540;&#28388;&#27874;[3]'</span>);
+subplot(2,4,6); imshow(uint8(X_prewitt)); title(<span class="string">'\fontsize{11}\color{blue}4&#12289;Prewitt&#31639;&#23376;'</span>);
+subplot(2,4,7); imshow(uint8(X_edge));    title(<span class="string">'\fontsize{11}\color{blue}5&#12289;&#36793;&#30028;&#22788;&#29702;'</span>);
+subplot(2,4,8); imshow(uint8(X_bw));      title(<span class="string">'\fontsize{11}\color{blue}6&#12289;&#20108;&#20540;&#21270;'</span>);
+</pre><img vspace="5" hspace="5" src="main_01.png" alt=""> <h2>&#22788;&#29702;&#26041;&#24335;&#20108;<a name="3"></a></h2><pre class="codeinput"><span class="comment">%@@ &#32447;&#24615;&#24179;&#28369;&#28388;&#27874;&#22120;</span>
+<span class="comment">% 1&#12289;&#39046;&#22495;&#24179;&#22343;&#27861;&#65306;&#23545;&#22270;&#20687;&#36827;&#34892;&#24179;&#28369;&#22788;&#29702;,&#27169;&#31946;&#22270;&#20687;&#65292;&#20197;&#20415;&#21435;&#25481;&#22270;&#20687;&#22826;&#23567;&#30340;&#32454;&#33410;,&#25552;&#21462;&#36739;&#22823;&#30340;&#30446;&#26631;</span>
+Y_ave=Average(X_src,15);
+
+<span class="comment">%@@ &#38750;&#32447;&#24615;&#24179;&#28369;&#28388;&#27874;&#22120;</span>
+<span class="comment">%@ &#24207;&#32479;&#35745;&#28388;&#27874;&#22120;</span>
+<span class="comment">% 2&#12289;&#26368;&#23567;&#20540;&#28388;&#27874;1&#65306;&#26816;&#27979;&#22270;&#20687;&#26368;&#26263;&#28857;</span>
+Y_min1=MinFilter(Y_ave,3);
+<span class="comment">% 3&#12289;&#26368;&#23567;&#20540;&#28388;&#27874;2&#65306;&#26816;&#27979;&#22270;&#20687;&#26368;&#26263;&#28857;</span>
+Y_min2=MinFilter(Y_min1,5);
+<span class="comment">% 4&#12289;&#20013;&#20540;&#28388;&#27874;&#65306;&#28040;&#38500;&#23396;&#31435;&#22122;&#22768;&#33021;&#21147;&#24378;&#65292;&#19988;&#27169;&#31946;&#23567;</span>
+Y_med=MedFilter(Y_min2,5);
+
+<span class="comment">%@@ &#38750;&#32447;&#24615;&#38160;&#21270;&#28388;&#27874;&#22120;</span>
+<span class="comment">% 5&#12289;Sobel&#31639;&#23376;:&#24179;&#28369;&#22122;&#22768;</span>
+Y_sobel=Sobel(double(Y_med));
+
+<span class="comment">% 6&#12289;&#36793;&#30028;&#22788;&#29702;:&#23558;&#36793;&#30028;&#22788;&#30340;&#20687;&#32032;&#35774;&#32622;&#20026;0</span>
+Y_edge = zeros(size(Y_sobel));                                    <span class="comment">% &#21019;&#24314;&#21516;&#31561;&#22823;&#23567;&#30340;&#38646;&#30697;&#38453;</span>
+[height,width]=size(Y_sobel);                                     <span class="comment">% &#26816;&#32034;&#22270;&#20687;&#22823;&#23567;</span>
+Y_edge(7:height-6,7:width-6) = Y_sobel(7:height-6,7:width-6);     <span class="comment">% &#23558;&#20013;&#38388;&#37096;&#20998;&#25918;&#20837;&#38646;&#30697;&#38453;</span>
+
+<span class="comment">% 7&#12289;&#20108;&#20540;&#21270;:&#38408;&#20540;&#20026;0.5</span>
+Y_bw=img2bw(Y_edge,0.5);
+
+<span class="comment">% &#26174;&#31034;&#32467;&#26524;</span>
+h2 = figure(<span class="string">'name'</span>,<span class="string">'&#28388;&#27874;&#26041;&#24335;2'</span>,<span class="string">'NumberTitle'</span>,<span class="string">'off'</span>);
+set(h2,<span class="string">'units'</span>,<span class="string">'normalized'</span>,<span class="string">'position'</span>,[0.1 0.1 0.7 0.7]);
+subplot(2,4,1); imshow(uint8(X_src));   title(<span class="string">'\fontsize{11}\color{blue}&#21407;&#22270;'</span>);
+subplot(2,4,2); imshow(uint8(Y_ave));   title(<span class="string">'\fontsize{11}\color{blue}1&#12289;&#24179;&#28369;&#28388;&#27874;'</span>);
+subplot(2,4,3); imshow(uint8(Y_min1));  title(<span class="string">'\fontsize{11}\color{blue}2&#12289;&#26368;&#23567;&#20540;&#28388;&#27874;1[3]'</span>);
+subplot(2,4,4); imshow(uint8(Y_min2));  title(<span class="string">'\fontsize{11}\color{blue}3&#12289;&#26368;&#23567;&#20540;&#28388;&#27874;2[5]'</span>);
+subplot(2,4,6); imshow(uint8(Y_med));   title(<span class="string">'\fontsize{11}\color{blue}4&#12289;&#20013;&#20540;&#28388;&#27874;'</span>);
+subplot(2,4,7); imshow(uint8(Y_sobel)); title(<span class="string">'\fontsize{11}\color{blue}5&#12289;Sobel&#31639;&#23376;'</span>);
+subplot(2,4,8); imshow(uint8(Y_bw));    title(<span class="string">'\fontsize{11}\color{blue}6&#12289;&#20108;&#20540;&#21270;'</span>);
+</pre><img vspace="5" hspace="5" src="main_02.png" alt=""> <p class="footer"><br><br></p></div><!--
+##### SOURCE BEGIN #####
+%% 初始化
+clear
+clc
+% 读取原图
+X_src=imread('LBimage2.bmp');
+%%
+
+
+%%                          处理方式一
+
+%@@ 非线性平滑滤波器
+%@ 序统计滤波器
+% 1、最小值滤波1：检测图像最暗点
+X_min1=MinFilter(double(X_src),3); 
+% 2、最小值滤波1：检测图像最暗点
+X_min2=MinFilter(X_min1,7); 
+% 3、中值滤波：消除孤立噪声能力强，且模糊小
+X_med=MedFilter(X_min2,3);
+
+%@@ 非线性锐化滤波器
+% 4、Prewitt算子：抑制噪声
+X_prewitt=Prewitt(double(X_med));
+
+% 5、边界处理：将边界处的像素设置为0 
+X_edge = zeros(size(X_prewitt));                                % 创建同等大小的零矩阵
+[height,width]=size(X_prewitt);                                 % 检索图像大小
+X_edge(7:height-6,7:width-6) = X_prewitt(7:height-6,7:width-6); % 将中间部分放入零矩阵
+
+% 6、二值化：阈值为0.4
+X_bw=img2bw(X_edge,0.4); 
+
+% 显示结果
+h1 = figure('name','滤波方式1','NumberTitle','off');
+set(h1,'units','normalized','position',[0.1 0.1 0.7 0.7]);
+subplot(2,4,1); imshow(uint8(X_src));     title('\fontsize{11}\color{blue}原图');
+subplot(2,4,2); imshow(uint8(X_min1));    title('\fontsize{11}\color{blue}1、最小值滤波1[3]');
+subplot(2,4,3); imshow(uint8(X_min2));    title('\fontsize{11}\color{blue}2、最小值滤波2[7]');
+subplot(2,4,4); imshow(uint8(X_med));     title('\fontsize{11}\color{blue}3、中值滤波[3]');
+subplot(2,4,6); imshow(uint8(X_prewitt)); title('\fontsize{11}\color{blue}4、Prewitt算子');
+subplot(2,4,7); imshow(uint8(X_edge));    title('\fontsize{11}\color{blue}5、边界处理');
+subplot(2,4,8); imshow(uint8(X_bw));      title('\fontsize{11}\color{blue}6、二值化');
+
+
+
+
+
+%%                          处理方式二
+
+%@@ 线性平滑滤波器
+% 1、领域平均法：对图像进行平滑处理,模糊图像，以便去掉图像太小的细节,提取较大的目标
+Y_ave=Average(X_src,15); 
+
+%@@ 非线性平滑滤波器
+%@ 序统计滤波器
+% 2、最小值滤波1：检测图像最暗点
+Y_min1=MinFilter(Y_ave,3); 
+% 3、最小值滤波2：检测图像最暗点
+Y_min2=MinFilter(Y_min1,5); 
+% 4、中值滤波：消除孤立噪声能力强，且模糊小
+Y_med=MedFilter(Y_min2,5); 
+
+%@@ 非线性锐化滤波器
+% 5、Sobel算子:平滑噪声
+Y_sobel=Sobel(double(Y_med));
+
+% 6、边界处理:将边界处的像素设置为0 
+Y_edge = zeros(size(Y_sobel));                                    % 创建同等大小的零矩阵
+[height,width]=size(Y_sobel);                                     % 检索图像大小
+Y_edge(7:height-6,7:width-6) = Y_sobel(7:height-6,7:width-6);     % 将中间部分放入零矩阵
+
+% 7、二值化:阈值为0.5
+Y_bw=img2bw(Y_edge,0.5);          
+
+% 显示结果
+h2 = figure('name','滤波方式2','NumberTitle','off');
+set(h2,'units','normalized','position',[0.1 0.1 0.7 0.7]);
+subplot(2,4,1); imshow(uint8(X_src));   title('\fontsize{11}\color{blue}原图');
+subplot(2,4,2); imshow(uint8(Y_ave));   title('\fontsize{11}\color{blue}1、平滑滤波');
+subplot(2,4,3); imshow(uint8(Y_min1));  title('\fontsize{11}\color{blue}2、最小值滤波1[3]');
+subplot(2,4,4); imshow(uint8(Y_min2));  title('\fontsize{11}\color{blue}3、最小值滤波2[5]');
+subplot(2,4,6); imshow(uint8(Y_med));   title('\fontsize{11}\color{blue}4、中值滤波');
+subplot(2,4,7); imshow(uint8(Y_sobel)); title('\fontsize{11}\color{blue}5、Sobel算子');
+subplot(2,4,8); imshow(uint8(Y_bw));    title('\fontsize{11}\color{blue}6、二值化');
+
+##### SOURCE END #####
+--></body></html>
